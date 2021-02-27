@@ -1,6 +1,7 @@
 CREATE DATABASE ClinicaPet;
 
 USE ClinicaPet;
+DROP TABLE Clinicas;
 
 CREATE TABLE Clinicas
 (

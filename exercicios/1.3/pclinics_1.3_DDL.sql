@@ -1,7 +1,6 @@
 CREATE DATABASE ClinicaPet;
 
 USE ClinicaPet;
-DROP TABLE Clinicas;
 
 CREATE TABLE Clinicas
 (
@@ -43,8 +42,8 @@ CREATE TABLE Pets
 	idPet INT PRIMARY KEY IDENTITY
 	,idRaca INT FOREIGN KEY REFERENCES Racas(idRaca)
 	,idDono INT FOREIGN KEY REFERENCES Donos (idDono)
-	,Nome VARCHAR(100)
-	,DataNascimento VARCHAR(8)
+	,NomePet VARCHAR(100)
+	,DataNascimento VARCHAR(15)
 );
 
 CREATE TABLE Atendimentos
@@ -52,4 +51,6 @@ CREATE TABLE Atendimentos
 	idAtendimento INT PRIMARY KEY IDENTITY
 	,idVeterinario INT FOREIGN KEY REFERENCES Veterinarios(idVeterinario)
 	,idPet INT FOREIGN KEY REFERENCES Pets (idPet)
+	,Diagnostico VARCHAR(600) NOT NULL
+	,DataAtendimento VARCHAR(15) NOT NULL
 );

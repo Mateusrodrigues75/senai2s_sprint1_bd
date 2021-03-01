@@ -22,6 +22,12 @@ CREATE TABLE Classes
 	,NomeClasse VARCHAR(200) NOT NULL 
 );
 
+CREATE TABLE HabilidadeClasses
+(
+	idClasse INT FOREIGN KEY REFERENCES Classes(idClasse)
+	,idHabilidade INT FOREIGN KEY REFERENCES Habilidades(idHabilidade)
+);
+
 CREATE TABLE Personagens
 (
 	idPersonagem INT PRIMARY KEY IDENTITY
